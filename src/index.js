@@ -11,5 +11,5 @@ app.listen(3000, function () { console.log('listening on port 3000') });
 
 const routes = require('./routes/routes')
 console.log(`${process.env.SECRET}`)
-console.log(`${process.env.JWT_SECRET}`)
+
 app.use('/', routes)
