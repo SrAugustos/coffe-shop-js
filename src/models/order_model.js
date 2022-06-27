@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 var orderSchema = new Schema({
     date: Date,
-    Products: [],
+    products: [],
     user: String,
 
 })

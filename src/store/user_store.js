@@ -1,7 +1,5 @@
-var userLog = {
+
+module.exports = {
     username: '',
     log: false,
-}
-module.exports = {
-    user: userLog,
 }
