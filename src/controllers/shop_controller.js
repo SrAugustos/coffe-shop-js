@@ -10,5 +10,13 @@ module.exports = {
             res.json({ message: err })
         }
     },
-    repository: repository.repository
+    repository: async (req, res) => {
+        try {
+            repository.repository(res)
+        }
+
+        catch (err) {
+            res.json({ message: err })
+        }
+    }
 }
