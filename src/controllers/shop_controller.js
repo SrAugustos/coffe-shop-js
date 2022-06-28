@@ -12,7 +12,8 @@ module.exports = {
     },
     repository: async (req, res) => {
         try {
-            repository.repository(res)
+            const products = await repository.repository()
+            res.json(products)
         }
 
         catch (err) {
