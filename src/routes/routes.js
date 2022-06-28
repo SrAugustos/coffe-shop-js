@@ -1,23 +1,12 @@
 const express = require('express')
 const router = express.Router();
-const respositoryController = require('../controllers/products_repository_controller')
-const productsController = require('../controllers/buy_controller')
-const CreateUserController = require('../controllers/user_create_account_controller')
-const loginController = require('../controllers/user_login_controller');
-const verifyJWT = require('./../services/verify_JWT')
-router.get('/products', verifyJWT, async (req, res, next) => {
+const userController = require('./../controllers/user_controller')
+const shopController = require('./../controllers/shop_controller')
+const verifyJWT = require('./../middleware/verify_JWT')
+router.get('/products', shopController.repository)
+router.post('/shop', verifyJWT, shopController.buy)
+router.post('/CreateUser', userController.createuser)
 
-    respositoryController(res)
-})
-router.post('/shop', async (req, res) => {
-    productsController(req, res)
-})
-router.post('/CreateUser', verifyJWT, async (req, res) => {
-    CreateUserController(req, res)
-})
-
-router.post('/login', async (req, res) => {
-    loginController(req, res)
-})
+router.post('/login', userController.login)
 
 module.exports = router; 
