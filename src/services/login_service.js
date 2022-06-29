@@ -5,7 +5,7 @@ const secret = require('./../config/auth.json')
 
 module.exports = {
 
-    login: async (email, password, res) => {
+    login: async (email, password) => {
 
 
         userModel.findOne({ email: email, password: password }).exec((err, user) => {
@@ -13,7 +13,7 @@ module.exports = {
             if (user) {
                 console.log(user._id)
                 const token = jwt.sign({ userId: user._id }, secret.secret, { expiresIn: 300 })
-                res.json({ token: token })
+               return token
             }
         })
     },
