@@ -1,12 +1,7 @@
-const express = require('express')
-const router = express.Router();
 const orderModel = require('./../models/order_model')
-
-
-
 module.exports = {
-    buy: async productsParams => {
-        const { products } = productsParams
+    buy: async productsRequest => {
+        const { products } = productsRequest
         var date = Date.now()
         const order = {
             date,

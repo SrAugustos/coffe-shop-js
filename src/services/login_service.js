@@ -1,8 +1,6 @@
 const userModel = require('./../models/user_model')
-const jwt = require('jsonwebtoken')
 
-const secret = require('./../config/auth.json')
-
+const jwt = require('./../utils/jason_web_token')
 module.exports = {
 
     login: async (email, password) => {
@@ -12,11 +10,9 @@ module.exports = {
             if (err) return console.error(err)
             if (user) {
                 console.log(user._id)
-                const token = jwt.sign({ userId: user._id }, secret.secret, { expiresIn: 300 })
-               return token
+                const token = jwt(user._id)
+                return token
             }
         })
     },
-
-
-}
+}   

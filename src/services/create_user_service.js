@@ -1,11 +1,7 @@
-const express = require('express')
-const router = express.Router()
 const userModel = require('./../models/user_model')
-
-
 module.exports = {
-    createUser: async userParams => {
-        const { email, password } = userParams
+    createUser: async userRequest => {
+        const { email, password } = userRequest
         const user = {
             email, password
         }
