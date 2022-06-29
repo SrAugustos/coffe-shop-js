@@ -1,6 +1,6 @@
-const userModel = require('./../models/user_model')
+const userModel = require('../models/user_model')
 
-const jwt = require('./../utils/jason_web_token')
+const jwt = require('../../utils/jason_web_token')
 module.exports = {
 
     login: async (email, password) => {

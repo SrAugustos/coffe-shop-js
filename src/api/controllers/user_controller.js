@@ -1,5 +1,5 @@
-const login = require('./../services/login_service')
-const createuser = require('./../services/create_user_service')
+const login = require('../services/login_service')
+const createuser = require('../services/create_user_service')
 
 module.exports = {
     login: async (req, res) => {

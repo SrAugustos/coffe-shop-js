@@ -1,4 +1,4 @@
-const userModel = require('./../models/user_model')
+const userModel = require('../api/models/user_model')
 module.exports = {
     createUser: async userRequest => {
         const { email, password } = userRequest
