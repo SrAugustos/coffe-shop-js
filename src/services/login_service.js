@@ -4,9 +4,7 @@ const jwt = require('./../utils/jason_web_token')
 module.exports = {
 
     login: async (email, password) => {
-
-
-        userModel.findOne({ email: email, password: password }).exec((err, user) => {
+            userModel.findOne({ email: email, password: password }).exec((err, user) => {
             if (err) return console.error(err)
             if (user) {
                 console.log(user._id)
