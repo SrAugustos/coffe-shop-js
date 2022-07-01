@@ -1,10 +1,10 @@
-const login = require('../services/login_service')
-const createuser = require('../services/create_user_service')
+const userService = require('../services/user_service')
+
 
 module.exports = {
     login: async (req, res) => {
         try {
-            const token = await login.login(req.body.email, req.body.password)
+            const token = await userService.login(req.body.email, req.body.password)
             res.json(token)
         }
         catch (err) {
@@ -13,7 +13,7 @@ module.exports = {
     },
     createuser: async (req, res) => {
         try {
-            createuser.createUser(req.body)
+            userService.createUser(req.body)
             res.json({ UserCreated: true })
 
         }

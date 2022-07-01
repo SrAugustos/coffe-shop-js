@@ -1,5 +1,6 @@
 require('dotenv').config()
-const connect = require('./connection_config');
+console.log(`${process.env.SECRET}`)
+require('./connection_config');
 
 const express = require('express')
 
@@ -10,6 +11,6 @@ app.listen(3000, function () { console.log('listening on port 3000') });
 
 
 const routes = require('./routes/routes')
-console.log(`${process.env.SECRET}`)
+
 
 app.use('/', routes)
