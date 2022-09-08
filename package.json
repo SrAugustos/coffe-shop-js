@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node src/app.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,10 @@
     "mongodb": "^4.7.0",
     "mongoose": "^6.3.6",
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "type": "module",
+  "repository": "https://github.com/SrAugustos/coffe-shop-js.git"
 }

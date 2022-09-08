@@ -1,5 +1,5 @@
-const express = require('express')
-const router = express.Router();
+import express from 'express'
+const router = express.Router()
 const userController = require('../api/controllers/user_controller')
 const productController = require('../api/controllers/products_controller')
 const orderController = require('../api/controllers/order_controller')
@@ -21,4 +21,4 @@ router.delete('/order', verifyJWT, orderController.deleteOrder)
 router.post('/CreateUser', userController.createuser)
 router.post('/login', userController.login)
 
-module.exports = router; 
+export default router; 
